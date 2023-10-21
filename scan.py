@@ -910,6 +910,7 @@ def print_menu():
     for key in menu_options.keys():
         print (key, '--', menu_options[key] )
 
+clear
 menu_options = {
     1: 'CloudFlare ip check',
     2: 'Fastly ip check',
