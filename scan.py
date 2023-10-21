@@ -45,15 +45,15 @@ def FileHandler():
 
 def update_script(code):
     if code == 1:
-        file_list = requests.get('https://raw.githubusercontent.com/SuspectWorkers/cf_scan_443/main/file_list.txt', verify=False).text
+        file_list = requests.get('https://raw.githubusercontent.com/Rolka111111/cf_scan_443/main/file_list.txt', verify=False).text
         for a in file_list.split('\n'):
-            rep = requests.get('https://raw.githubusercontent.com/SuspectWorkers/cf_scan_443/main/'+str(a), verify=False)
+            rep = requests.get('https://raw.githubusercontent.com/Rolka111111/cf_scan_443/main/'+str(a), verify=False)
             open(str(a), "wb").write(rep.content)
     else:
         file_list = open("file_list.txt", "r")
         for a in file_list.readlines():
             if not os.path.exists(a):
-                rep = requests.get('https://raw.githubusercontent.com/SuspectWorkers/cf_scan_443/main/'+str(a), verify=False)
+                rep = requests.get('https://raw.githubusercontent.com/Rolka111111/cf_scan_443/main/'+str(a), verify=False)
                 open(str(a), "wb").write(rep.content)
 
 def cf_443_check(ip):
@@ -927,7 +927,7 @@ menu_options = {
 if __name__=='__main__':
     version = 0.46
     try:
-        if (float(requests.get('https://raw.githubusercontent.com/SuspectWorkers/cf_scan_443/main/version.txt', verify=False).text) > float(version)):
+        if (float(requests.get('https://raw.githubusercontent.com/Rolka111111/cf_scan_443/main/version.txt', verify=False).text) > float(version)):
             update_script(1)
         else:
             update_script(0)
