@@ -1,0 +1,15 @@
+arvan_ranges.txt
+azure_all_ranges.txt
+azure_ranges.txt
+cflare_ranges.txt
+cfront_ranges.txt
+config.py
+fastly_ranges.txt
+file_list.txt
+gcore_ranges.txt
+get_ready.bat
+scan.py
+start.bat
+verizon_ranges.txt
+subfinder_arm64
+subfinder_x86_64.exe
