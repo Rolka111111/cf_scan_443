@@ -15,7 +15,7 @@ import warnings
 import platform
 import subprocess
 import socket
-from fp.fp import FreeProxy
+#from fp.fp import FreeProxy
 from requests.adapters import HTTPAdapter
 import platform
 import hashlib
