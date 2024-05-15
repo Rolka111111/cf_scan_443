@@ -10,10 +10,6 @@
   ```
   cd cf_scan_443; python3 scan.py
   ```
-  > ## Start 2
-  ```
-  cd cf_scan_443; python3 123fastly.py
-  ```
 
   > ## Output Result :
   > Results saved to file (cflare_output.txt; cfront_output...)
