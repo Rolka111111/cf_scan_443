@@ -622,34 +622,6 @@ def translator2_check(ip):
             tasks.put(str(domain) + ';ip_translator.txt')
     counts-=1
 
-def hackertarget_check(ip):
-    global counts
-    global possible_domain_count
-    global parsed_domain_count
-    possible_domain_count=0
-    keks = True
-    while keks:
-        try:
-            proxy = FreeProxy().get()
-            proxies = {
-                'http': str(proxy),
-                'https': str(proxy),
-            }
-            req = requests.get('https://api.hackertarget.com/reverseiplookup/?q=%s' % ip, proxies=proxies, headers={'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'})
-            the_page = req.text
-            if "No DNS" in the_page:
-                keks = False
-            elif "API" in the_page:
-                raise Exception("API Count Exceeded")
-            else:
-                for a in the_page.splitlines():
-                    parsed_domain_count+=1
-                    tasks.put(str(domain) + ';hackertarget.txt')
-            keks = False
-        except:
-            pass
-    counts-=1
-
 def free_threads():
     global threads
     global counts
